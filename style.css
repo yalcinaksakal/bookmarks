@@ -163,6 +163,11 @@ h3 {
   outline: none;
 }
 
+.form-input::placeholder {
+  color: rgb(238, 102, 84);
+  font-size: 90%
+}
+
 .form-label {
   color: var(--primary);
 }
