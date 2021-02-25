@@ -111,9 +111,9 @@ function buildBookmarks() {
 }
 
 function fetchBookmarks() {
-  const storage = JSON.parse(localStorage.getItem("bookmarks"));
-  //if null make it empty
-  if (!storage) storage = {};
+  const storage = JSON.parse(localStorage.getItem("bookmarks"))
+    ? JSON.parse(localStorage.getItem("bookmarks"))
+    : {};
 
   if (Object.keys(storage).length > 0) bookmarks = storage;
   else
