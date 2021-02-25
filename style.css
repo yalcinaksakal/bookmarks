@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+
+:root {
+  --primary: #7176b4;
+  --border-radius: 7px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Karla, sans-serif;
+  margin: 0;
+  height: 100vh;
+  background-image: linear-gradient(
+      to top left,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.1)
+    ),
+    url("/bg.png");
+  background-size: cover;
+}
+
+h1 {
+  color: white;
+  padding: 20px;
+  background: #14196392;
+  border-radius: var(--border-radius);
+  text-transform: uppercase;
+  width: 250px;
+  margin: 20px auto 10px;
+  user-select: none;
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: 1px;
+}
+h1:hover {
+  background: #141963d5;
+}
+
+/* bookmarks */
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.item {
+  background: #14196392;
+  color: white;
+  border-radius: var(--border-radius);
+  padding: 15px;
+  margin: 5px;
+}
+.item:hover {
+  background: #141963d5;
+}
+
+a {
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+a:link,
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+.fa-times {
+  float: right;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.name {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.name img {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+  vertical-align: sub;
+}
+
+/* Modal */
+.modal-container {
+  background: rgba(0, 0, 0, 0.6);
+  display: none; /* model-container and sho-modal classes applied both together to same elemet. so when we toggle show-mdal class on that element display none will be overwritten to flex */
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.show-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 1px;
+  background: whitesmoke;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  max-width: 95%;
+  width: 500px;
+  animation: modalopen 1s;
+}
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.close-icon {
+  float: right;
+  color: white;
+  font-size: 24px;
+  position: relative;
+  top: 8px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.modal-header {
+  border-radius: var(--border-radius);
+  background: var(--primary);
+  color: white;
+  padding: 10px;
+}
+h3 {
+  margin: 0;
+}
+
+.modal-content {
+  padding: 10px;
+}
+
+/* form */
+.form-group {
+  height: 55px;
+}
+.form-input {
+  width: 97%;
+  padding: 5px;
+  border: 2px solid #e2e3f3;
+  border-radius: var(--border-radius);
+  outline: none;
+}
+
+.form-label {
+  color: var(--primary);
+}
+
+button {
+  cursor: pointer;
+  color: white;
+  background: var(--primary);
+  height: 30px;
+  width: 100px;
+  border: none;
+  border-radius: var(--border-radius);
+  margin-top: 10px;
+}
+
+button:hover {
+  filter: brightness(110%);
+}
+
+button:focus {
+  outline: none;
+}
+/* Media query */
+@media screen and (max-width: 471px) {
+  .container {
+    flex-direction: column;
+  }
+}
